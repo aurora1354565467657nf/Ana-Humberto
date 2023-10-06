@@ -1,0 +1,74 @@
+{%extends 'base_generic.html'%}
+{% load static %}
+{%block content%}
+
+<section class="">
+    <div class="container-fluid" >
+        <div  id="carousel"class="carousel slide carousel-fade  d-flex justify-content-center  pt-3"  >
+            <div class="carousel-inner d-flex  p-3">
+                <div class="carousel-item active">
+                    <video src="{% static 'images/Bingo.mp4' %}" class="d-block w-100" style="height: 600px; "></video>
+                    <!-- <img src="Assets/bingo.jpg" class="d-block w-100" style="height: 600px; " > -->
+                </div>
+                <div class="carousel-item">
+                    <video src="{% static 'images/mat-bingo.mp4' %}" class="d-block w-100 " style="height: 600px; " ></video>
+                    <!-- <img src="Assets/matematica-bingo.jpg" type="video/mp4" class="d-block w-100"  style="height: 600px;" > -->
+                </div>
+                <div class="carousel-item">
+                    <video src="{% static 'images/videoB.mp4' %}" class="d-block w-100"  style="height: 600px;"></video>
+                    <!-- <img src="Assets/f6.jpg" class="d-block w-100"  style="height: 600px;"> -->
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section> 
+</div>
+<section class="container-fluid h-50 p-4">
+<div class="  container-fluid bg-danger rounded mt-2 " style=" color:white; font-family:'Georgia', serif">
+    <div class="row  my-5">
+        <h1 class="d-flex text-start justify-content-center px-2 mt-2  bg-white rounded w-100 text-danger" style="font-size: 50px; width: 100%; "> Cadastre-se</h1>
+        <div class=" pb-4 col-sm-6 align-self-start  h-100">
+
+            <div class="h-100 d-block  justify-content-start align-items-start ">
+                
+                <p class="py-5 text-center " style="font-size: 20px;"> Ao realizar o cadastro, terá acesso a mais benficios no nosso site e poderá jogar o Bingo Online!</p>
+            </div> 
+            <div class="d-flex justify-content-center align-items-end h-100 mt-3">
+                <a class="btn btn-primary w-100 bg-warning text-dark" href="/cadastro" role="button">Cadastre-se</a>
+            </div>
+        </div> 
+        <div class=" col-sm-6 d-flex align-self-center justify-content-center pb-3 w-50 text-center">
+            <img src="{% static 'images/cartelaa.png' %} " class=" align-self-center  justify-content-center w-75 "  >
+        </div>
+    </div>
+</div>
+</section>
+<section class="container-fluid h-50 p-4">
+    <div class="  container-fluid bg-success rounded mt-2 " style=" color:white; font-family:'Georgia', serif">
+        <div class="row  my-5">
+            <h1 class="d-flex text-start justify-content-center px-2 mt-2  bg-white rounded w-100 text-success" style="font-size: 50px; width: 100%; "> Saiba mais</h1>
+            <div class=" col-sm-6 d-flex align-self-center justify-content-center pb-3 w-50 text-center">
+                <img src="{% static 'images/bolas.png' %} " class=" align-self-center  justify-content-center w-75 "  >
+            </div>
+            <div class=" pb-4 col-sm-6 align-self-start  h-100">
+    
+                <div class="h-100 d-block  justify-content-start align-items-start ">
+                    
+                    <p class="py-5 text-center " style="font-size: 20px;"> Venha saber como funciona e como transformar o aprendizado em algo divertido!</p>
+                </div> 
+                <div class="d-flex justify-content-center align-items-end h-100 mt-3">
+                    <a class="btn btn-primary w-100 bg-warning text-dark" href="/saibamais" role="button">Saiba mais</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+    </section>
+{%endblock%}

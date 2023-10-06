@@ -1,0 +1,68 @@
+{%extends 'base_generic.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{%block content%}
+
+
+<section class=" pt-5 h-50" id="section1">
+    <div class="container-fluid w-100 text-white mt-3" style="font-family:'Big caslon', serif">
+        <div class="row d-flex justify-content-center align-content-center">
+            <div class="col-12 d-flex justify-content-center align-content-center">
+                <h1>Adicione seu comentário!</h1>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-9 bg-light bg-opacity-25 p-5 rounded-4 fs-4">
+                
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    
+                
+                <div class="d-flex justify-content-center align-items-center pt-2">
+                    <button type="submit"
+                        style="width: 350px; border-style: none; border-radius: 10px; height: 40px; color:white;background-color:rgb(4, 4, 97); font-weight: 700;">ENVIAR</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pt-5 h-75">
+    <div class="container-fluid w-100 text-white h-auto pt-3" style="font-family:'Big caslon', serif">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 mb-5 d-flex align-content-center justify-content-center ">
+                <div class="fw-bold fs-2">
+                    Confira os comentários mais recentes!
+                </div>
+            </div>
+
+            {%for comentario in comentarios%}
+            <div class="col-9 fs-4">
+                <div class="card mb-1">
+                    <div class="card-header text-white fw-bold" style="background-color:rgb(4, 4, 97)">
+                        {{comentario.pessoa.username}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Comentou:</h5>
+                        <p class="card-text">  {{comentario.comentario}}</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            {% if comentario.pessoa.id == user.id %}
+                            <a href="/editar_comentario/{{comentario.id}}" class="btn btn-primary" style="background-color:rgb(4, 4, 97)" onclick="return confirm('Tem certeza que deseja editar?');">
+                                Editar</a>
+                            <a href="/excluir_comentario/{{comentario.id}}" class="btn btn-primary" style="background-color:rgb(4, 4, 97)" onclick="return confirm('Tem certeza que deseja editar?');">
+                                Excluir</a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            {%endfor%} 
+        </div>
+    </div>
+</section>
+
+{%endblock%}
