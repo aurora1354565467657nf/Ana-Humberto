@@ -2,7 +2,7 @@
 
     $servidor = 'localhost';
     $usuario = 'root';
-    $senha = '';
+    $senha = 'Anvi4002#';
     $basededados = 'bd_login';
 
     $conexao = new mysqli($servidor, $usuario, $senha,
